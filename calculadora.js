@@ -3,21 +3,21 @@ var operadorActual = "";
 var resultado = "";
 
 $(".btn").on("click", function(){
-	var buttonValue = $(this).val();
+	var valorBoton = $(this).val();
 	
-	if(buttonValue == "all-clear"){
+	if(valorBoton == "all-clear"){
 		numeroActual = "";
 		operadorActual = "";
 		resultado = "";
 		$(".entrada-pantalla-calculadora").val("");
 	}
-	else if(buttonValue == "+" || buttonValue == "-" || buttonValue == "*" || buttonValue == "/"){
-		operadorActual = buttonValue;
+	else if(valorBoton == "+" || valorBoton == "-" || valorBoton == "*" || valorBoton == "/"){
+		operadorActual = valorBoton;
 		resultado = numeroActual;
 		numeroActual = "";
 		$(".entrada-pantalla-calculadora").val("");
 	}
-	else if(buttonValue == "="){
+	else if(valorBoton == "="){
 		if(operadorActual == "+"){
 			resultado = parseFloat(resultado) + parseFloat(numeroActual);
 		}
@@ -35,7 +35,7 @@ $(".btn").on("click", function(){
 		operadorActual = "";
 	}
 	else{
-		numeroActual += buttonValue;
+		numeroActual += valorBoton;
 		$(".entrada-pantalla-calculadora").val(numeroActual);
 	}
 });
