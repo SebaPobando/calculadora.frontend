@@ -2,7 +2,7 @@ body {
     background-image: url(images/fondo.jpg);
 }
 
-.calculator {
+.calculadora {
     width: 100%;
     background-color: #555555;
     border-radius: 10px;
@@ -10,12 +10,12 @@ body {
     text-align: center;
 }
 
-.calculator-screen {
+.pantalla-calculadora {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.calculator-screen__input {
+.entrada-pantalla-calculadora {
     width: 100%;
     height: 50px;
     font-size: 24px;
@@ -26,7 +26,7 @@ body {
     color: whitesmoke;
 }
 
-.calculator-keys {
+.botones-calculadora {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
@@ -42,6 +42,7 @@ body {
 
 h1 {
     text-align: center;
+    color: #ff7675;
 }
 
 .operaciones {
