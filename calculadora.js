@@ -1,41 +1,41 @@
-var currentNumber = "";
-var currentOperator = "";
-var result = "";
+var numeroActual = "";
+var operadorActual = "";
+var resultado = "";
 
 $(".btn").on("click", function(){
 	var buttonValue = $(this).val();
 	
 	if(buttonValue == "all-clear"){
-		currentNumber = "";
-		currentOperator = "";
-		result = "";
+		numeroActual = "";
+		operadorActual = "";
+		resultado = "";
 		$(".calculator-screen__input").val("");
 	}
 	else if(buttonValue == "+" || buttonValue == "-" || buttonValue == "*" || buttonValue == "/"){
-		currentOperator = buttonValue;
-		result = currentNumber;
-		currentNumber = "";
+		operadorActual = buttonValue;
+		resultado = numeroActual;
+		numeroActual = "";
 		$(".calculator-screen__input").val("");
 	}
 	else if(buttonValue == "="){
-		if(currentOperator == "+"){
-			result = parseFloat(result) + parseFloat(currentNumber);
+		if(operadorActual == "+"){
+			resultado = parseFloat(resultado) + parseFloat(numeroActual);
 		}
-		else if(currentOperator == "-"){
-			result = parseFloat(result) - parseFloat(currentNumber);
+		else if(operadorActual == "-"){
+			resultado = parseFloat(resultado) - parseFloat(numeroActual);
 		}
-		else if(currentOperator == "*"){
-			result = parseFloat(result) * parseFloat(currentNumber);
+		else if(operadorActual == "*"){
+			resultado = parseFloat(resultado) * parseFloat(numeroActual);
 		}
-		else if(currentOperator == "/"){
-			result = parseFloat(result) / parseFloat(currentNumber);
+		else if(operadorActual == "/"){
+			resultado = parseFloat(resultado) / parseFloat(numeroActual);
 		}
-		$(".calculator-screen__input").val(result);
-		currentNumber = result;
-		currentOperator = "";
+		$(".calculator-screen__input").val(resultado);
+		numeroActual = resultado;
+		operadorActual = "";
 	}
 	else{
-		currentNumber += buttonValue;
-		$(".calculator-screen__input").val(currentNumber);
+		numeroActual += buttonValue;
+		$(".calculator-screen__input").val(numeroActual);
 	}
 });
