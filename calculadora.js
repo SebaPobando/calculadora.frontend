@@ -3,21 +3,21 @@ var operadorActual = "";
 var resultado = "";
 
 $(".btn").on("click", function(){
-	var buttonValue = $(this).val();
+	var valorBoton = $(this).val();
 	
-	if(buttonValue == "all-clear"){
+	if(valorBoton == "all-clear"){
 		numeroActual = "";
 		operadorActual = "";
 		resultado = "";
-		$(".calculator-screen__input").val("");
+		$(".entrada-pantalla-calculadora").val("");
 	}
-	else if(buttonValue == "+" || buttonValue == "-" || buttonValue == "*" || buttonValue == "/"){
-		operadorActual = buttonValue;
+	else if(valorBoton == "+" || valorBoton == "-" || valorBoton == "*" || valorBoton == "/"){
+		operadorActual = valorBoton;
 		resultado = numeroActual;
 		numeroActual = "";
-		$(".calculator-screen__input").val("");
+		$(".entrada-pantalla-calculadora").val("");
 	}
-	else if(buttonValue == "="){
+	else if(valorBoton == "="){
 		if(operadorActual == "+"){
 			resultado = parseFloat(resultado) + parseFloat(numeroActual);
 		}
@@ -30,12 +30,12 @@ $(".btn").on("click", function(){
 		else if(operadorActual == "/"){
 			resultado = parseFloat(resultado) / parseFloat(numeroActual);
 		}
-		$(".calculator-screen__input").val(resultado);
+		$(".entrada-pantalla-calculadora").val(resultado);
 		numeroActual = resultado;
 		operadorActual = "";
 	}
 	else{
-		numeroActual += buttonValue;
-		$(".calculator-screen__input").val(numeroActual);
+		numeroActual += valorBoton;
+		$(".entrada-pantalla-calculadora").val(numeroActual);
 	}
 });
